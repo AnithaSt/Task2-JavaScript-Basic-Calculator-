@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Basic Calculator</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  	<style>
+  		input{
+  				padding: 10px;
+  				width: 70px;
+  				height: 60px;
+  			}
+  		table{
+  				background: #3A4655;
+  				box-shadow: 0 8px 50px -7px black;
+  			}
+  		.firstinput	{
+  						width: 290px;
+  						height: 60px;
+  						color: white;
+  						background: #864c5c;
+  						border: solid 2px #3C4857;
+  						font-size: 20px;
+  					}
+  		table{
+  				background: #3A4655;
+  				box-shadow: 0 8px 50px -7px black;
+  			}
+  			#put{ 	
+  					color: white;
+  					background: #864c5c;
+  					border: solid 2px #3C4857;
+  					font-size: 20px;
+  				}
+  		.input{ 	
+  				color: white;
+  				background: #864c5c;
+  				border: solid 2px #3C4857;
+  				font-size: 18px;
+  				
+  			}
+  		@keyframes myInput {
+  								0%   {transform: rotate(0deg);}
+  								25%  {transform: rotate(90deg);}
+  								50%  {transform: rotate(180deg);}
+  								100% {transform: rotate(0deg);}
+							}
+  		.input:hover {
+  						background: #E0B612;
+  						animation-name:myInput;
+                		animation-duration: 1s;
+  					}
+  		.clear{
+  				color: red;
+  			  }
+  	</style>
+</head>
+<body>
+<div class="container bg-light">
+	<div class="row">
+		<div class="col-lg-4 col-md-3"></div>
+		<div class="col-lg-4 col-md-6 mt-5 mb-5">
+			<h3 class="text-cnter mb-5">Calculator</h3>
+			<form class="Calculator">
+				<table>
+					<tr>
+						<td colspan="4">
+							<input type="text" name="display" class="firstinput" id="put">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="button" name="open" value="(" class="input" onclick="display.value +='('">
+						</td>
+						<td>
+							<input type="button" name="close" value=")" class="input" onclick="display.value +=')'">
+						</td>
+						<td>
+							<input type="button" name="delete" value="DEL" class="input" 
+							onclick="display.value = display.value.substring(0,display.value.length-1)">
+						</td>
+						<td>
+							<input type="button" name="point" value="." class="input" onclick="display.value +='.'">
+						</td>						
+					</tr>
+					<tr>
+						<td>
+							<input type="button" name="one" value="1" class="input" onclick="display.value +='1'">
+						</td>
+						<td>
+							<input type="button" name="two" value="2" class="input" onclick="display.value +='2'">
+						</td>
+						<td>
+							<input type="button" name="three" value="3" class="input" onclick="display.value +='3'">
+						</td>
+						<td>
+							<input type="button" name="plus" value="+" class="input" onclick="display.value +='+'">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="button" name="four" value="4" class="input" onclick="display.value +='4'">
+						</td>
+						<td>
+							<input type="button" name="five" value="5" class="input" onclick="display.value +='5'">
+						</td>
+						<td>
+							<input type="button" name="six" value="6" class="input" onclick="display.value +='6'">
+						</td>
+						<td>
+							<input type="button" name="minus" value="-" class="input" onclick="display.value +='-'">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="button" name="seven" value="7" class="input" onclick="display.value +='7'">
+						</td>
+						<td>
+							<input type="button" name="eight" value="8" class="input" onclick="display.value +='8'">
+						</td>
+						<td>
+							<input type="button" name="nine" value="9" class="input" onclick="display.value +='9'">
+						</td>
+						<td>
+							<input type="button" name="mul" value="x" class="input" onclick="display.value +='*'">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="button" class="clear input" value="C"  onclick="display.value =''">
+						</td>
+						<td>
+							<input type="button" name="zero" value="0" class="input" onclick="display.value +='0'">
+						</td>
+						<td>
+							<input type="button" name="equal" value="=" class="input"
+							onclick="display.value = eval(display.value)">
+						</td>
+						<td>
+							<input type="button" name="div" value="/" class="input" onclick="display.value +='/'">
+						</td>
+					</tr>
+					
+				</table>
+			</form>
+		</div>
+		<div class="col-lg-4 col-md-3"></div>
+	</div>
+</div>
+</body>
+</html>
